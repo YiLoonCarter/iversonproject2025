@@ -19,3 +19,13 @@
     padding-top: 2px;
     font-size: 15px;
 }
+
+.tooltip-chart {
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    /* this will be used later to show the tooltip on the chart */
+    position: absolute; 
+    /* hide the tooltip for a while */
+    display: block;
+}

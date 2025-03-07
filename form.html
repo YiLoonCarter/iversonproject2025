@@ -43,34 +43,51 @@
         <div class="row">
             <div class="col-md-6 g-3">
                 <label for="refNo" class="form-label">Reference No</label>
-                <input type="text" class="form-control" id="refNo" value="1000001" disabled>
+                <input type="text" class="form-control" id="refNo">
               </div>
         </div>
         <div class="row">
             <div class="col-md-6 g-3">
                 <label for="cifNo" class="form-label">Customer No</label>
-                <input type="text" class="form-control" id="cifNo" value="1800001" disabled>
+                <input type="text" class="form-control" id="cifNo">
               </div>
               <div class="col-md-6 g-3">
                 <label for="cifName" class="form-label">Customer Name</label>
-                <input type="text" class="form-control" id="cifName" value="Trade Import Corp." disabled>
+                <input type="text" class="form-control" id="cifName">
               </div>
         </div>
         <div class="row">
             <div class="col-md-6 g-3">
-                <label for="srcBrn" class="form-label">Source Branch</label>
-                <input type="text" class="form-control" id="srcBrn" value="1000 - Kuala Lumpur" disabled>
+                <label for="srcBrn" class="form-label" style="display:none">Source Branch</label>
+                <input type="text" class="form-control" id="srcBrn" style="display:none">
+                <label for="srcBrn_Slt" class="form-label">Source Branch</label>
+                <select name="srcBrn_Slt" id="srcBrn_Slt" class="form-select">
+                  <option value="1000">1000 - Kuala Lumpur</option>
+                  <option value="1001">1001 - Kepong</option>
+                  <option value="1002">1002 - Bandar Utama</option>
+                  <option value="1003">1003 - Puchong</option>
+              </select>
               </div>
               <div class="col-md-6 g-3">
-                <label for="prcBrn" class="form-label">Processing Branch</label>
-                <input type="text" class="form-control" id="prcBrn" value="1001 - Kepong" disabled>
+                <label for="prcBrn" class="form-label" style="display:none">Processing Branch</label>
+                <input type="text" class="form-control" id="prcBrn" style="display:none">
+                <label for="prcBrn_Slt" class="form-label">Processing Branch</label>
+                <select name="prcBrn_Slt" id="prcBrn_Slt" class="form-select">
+                  <option value="1000">1000 - Kuala Lumpur</option>
+                  <option value="1001">1001 - Kepong</option>
+                  <option value="1002">1002 - Bandar Utama</option>
+                  <option value="1003">1003 - Puchong</option>
+              </select>
               </div>
         </div>
         <div class="row mb-3">
             <div class="col-md-6 g-3">
-                <label for="refType" class="form-label">Open As</label>
-                <input type="text" class="form-control" id="refType" value="Normal LC" disabled>
-              </div>
+              <label for="refType" class="form-label">Open As</label>
+              <select name="refType" id="refType" class="form-select">
+                  <option value="LLC">Local LC</option>
+                  <option value="FLC">Foreign LC</option>
+              </select>
+            </div>
         </div>
         <div class="topMenu">
             <h2>MAIN</h2>
@@ -126,6 +143,7 @@
               </div>
         </div>
         <div class="mt-3">
+            <button class="btn btn-primary" id="btn_Add">Add</button>
             <button class="btn btn-primary" id="btn_Save">Save</button>
             <button class="btn btn-primary" id="btn_Back">Back</button>
         </div>
