@@ -29,3 +29,7 @@
     /* hide the tooltip for a while */
     display: block;
 }
+
+.dropdown-item:hover {
+    background-color: rgb(66, 177, 202);
+}

@@ -1,11 +1,30 @@
 const urlParams = new URLSearchParams(window.location.search);
 const trxId = urlParams.get("trxId");
+const mode = urlParams.get("mode");
 //console.log(trxId);
 
-if (trxId === null) {
-  document.getElementById("btn_Add").style.display = "";
-  document.getElementById("btn_Save").style.display = "none";
+//if (trxId === null) {
+switch (mode) {
+  case "new":
+    document.getElementById("btn_Add").style.display = "";
+    document.getElementById("btn_Save").style.display = "none";
+  case "inq":
+    document.getElementById("btn_Add").style.display = "none";
+    document.getElementById("btn_Save").style.display = "none";
+  case "edt":
+    document.getElementById("btn_Add").style.display = "";
+    document.getElementById("btn_Save").style.display = "none";
+  case "cpy":
+    document.getElementById("btn_Add").style.display = "none";
+    document.getElementById("btn_Save").style.display = "";
+  case "del":
+    document.getElementById("btn_Add").style.display = "none";
+    document.getElementById("btn_Save").style.display = "none";
+  case "apr":
+    document.getElementById("btn_Add").style.display = "none";
+    document.getElementById("btn_Save").style.display = "none";
 }
+//}
 
 const addBtn = document.getElementById("btn_Add");
 addBtn.addEventListener("click", () => {
@@ -46,7 +65,7 @@ addBtn.addEventListener("click", () => {
   };
 
   fetch(
-    "https://api.sheety.co/d291cbf8645a5a9b69ebbd3f71080f59/mockData/transaction/",
+    "https://api.sheety.co/8f2d0776cec55794d25d35becbdcfc1d/appData/transaction/",
     {
       method: "POST",
       body: JSON.stringify(data),
@@ -93,7 +112,7 @@ saveBtn.addEventListener("click", () => {
   };
 
   fetch(
-    "https://api.sheety.co/d291cbf8645a5a9b69ebbd3f71080f59/mockData/transaction/" +
+    "https://api.sheety.co/8f2d0776cec55794d25d35becbdcfc1d/appData/transaction/" +
       trxId,
     {
       method: "PUT",
@@ -122,10 +141,8 @@ backBtn.addEventListener("click", () => {
 });
 
 if (trxId !== null) {
-  document.getElementById("btn_Add").style.display = "none";
-  document.getElementById("btn_Save").style.display = "";
   fetch(
-    "https://api.sheety.co/d291cbf8645a5a9b69ebbd3f71080f59/mockData/transaction/" +
+    "https://api.sheety.co/8f2d0776cec55794d25d35becbdcfc1d/appData/transaction/" +
       trxId,
     {
       headers: {
@@ -162,6 +179,17 @@ if (trxId !== null) {
 
       document.getElementById("refType").value = dataset.refType;
       document.getElementById("refType").disabled = true;
+
+      if (mode == "inq" || mode == "del" || mode == "apr") {
+        document.getElementById("lcType").disabled = true;
+        document.getElementById("docIndex").disabled = true;
+        document.getElementById("appDate").disabled = true;
+        document.getElementById("appRcpDate").disabled = true;
+        document.getElementById("issDate").disabled = true;
+        document.getElementById("expDate").disabled = true;
+        document.getElementById("currType").disabled = true;
+        document.getElementById("lcAmt").disabled = true;
+      }
 
       document.getElementById("lcType").value = dataset.lcType;
       document.getElementById("docIndex").value = dataset.docIndex;

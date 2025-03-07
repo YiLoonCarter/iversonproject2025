@@ -58,14 +58,14 @@
             <input type="text" name="refNo" id="refNo" class="form-control">
         </div>
         <div class="mb-3">
-            <button class="btn btn-primary" id="btn_Search">Search</button>
-            <button class="btn btn-primary" id="btn_New">New</button>
-            <button class="btn btn-primary" id="btn_Copy">Copy</button>
-            <button class="btn btn-primary" id="btn_Delete">Delete</button>
-            <button class="btn btn-primary" id="btn_Refresh">Refresh</button>
-            <button class="btn btn-primary" id="btn_Statistic">Statistic</button>
+            <button class="btn" id="btn_Search">Search</button>
+            <button class="btn" id="btn_New">New</button>
+            <!-- <button class="btn btn-primary" id="btn_Copy">Copy</button> -->
+            <!-- <button class="btn btn-primary" id="btn_Delete">Delete</button> -->
+            <!-- <button class="btn btn-primary" id="btn_Refresh">Refresh</button> -->
+            <!-- <button class="btn btn-primary" id="btn_Statistic">Statistic</button> -->
         </div>
-        <table class="table table-striped table-hover text-center table-bordered">
+        <table class="table table-striped table-hover text-center">
             <thead>
                 <tr>
                     <th class="listTable1" style="background-color: rgb(66, 177, 202);"><input type="checkbox" name="chkAll" id="chkAll"></th>
@@ -75,6 +75,7 @@
                     <th class="listTable1" style="background-color: rgb(66, 177, 202);">Currency</th>
                     <th class="listTable1" style="background-color: rgb(66, 177, 202);">Amount</th>
                     <th class="listTable1 text-start" style="background-color: rgb(66, 177, 202);">Status</th>
+                    <th class="listTable1" style="background-color: rgb(66, 177, 202);">To-do</th>
                 </tr>
             </thead>
             <tbody id="trxDetail">
@@ -117,7 +118,7 @@
             </tbody>
         </table>
       </div>      
-      <div id="pie-container">
+      <div id="pie-container" class="text-center">
         <h1>Transaction Statistics</h1>
         <div id="tooltip" class="tooltip-chart"></div>
         <svg id="pie-chart"></svg>
