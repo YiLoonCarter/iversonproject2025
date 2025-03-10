@@ -11,7 +11,7 @@
     <!-- change colour using utility classes, eg: from bg-body-tertiary to bg-success 
      define either your navbar colour is dark or light, 
      so font colour will adjust accordingly -->
-    <nav class="navbar navbar-expand-lg bg-success navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-bgcolor">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Trade Finance Backoffice</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,8 +58,17 @@
             <input type="text" name="refNo" id="refNo" class="form-control">
         </div>
         <div class="mb-3">
-            <button class="btn" id="btn_Search">Search</button>
-            <button class="btn" id="btn_New">New</button>
+            <button id="btn_Back" style="border: none;background-color: transparent;" data-bs-toggle="tooltip" title="Back" data-bs-placement="top">
+              <i class="fa-solid fa-arrow-left fa-2xl" style="color: rgb(55, 175, 202);"></i>
+            </button>
+            <button id="btn_Search" style="border: none;background-color: transparent;" data-bs-toggle="tooltip" title="Search" data-bs-placement="top">
+              <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: rgb(55, 175, 202);"></i>
+            </button>
+            <button id="btn_New" style="border: none;background-color: transparent;" data-bs-toggle="tooltip" title="New" data-bs-placement="top">
+              <i class="fa-solid fa-square-plus fa-2xl" style="color: rgb(66, 177, 202);"></i>
+            </button>
+            <!-- <button class="btn" id="btn_Search">Search</button>
+            <button class="btn" id="btn_New">New</button> -->
             <!-- <button class="btn btn-primary" id="btn_Copy">Copy</button> -->
             <!-- <button class="btn btn-primary" id="btn_Delete">Delete</button> -->
             <!-- <button class="btn btn-primary" id="btn_Refresh">Refresh</button> -->
@@ -123,8 +132,9 @@
         <div id="tooltip" class="tooltip-chart"></div>
         <svg id="pie-chart"></svg>
       </div>
-      <script src="listscript.js"></script>
+      <script src="https://kit.fontawesome.com/932c19caf6.js" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script src="listscript.js"></script>
       <script src="https://d3js.org/d3.v7.min.js"></script>
       <script src="piescript.js"></script>
     </body>

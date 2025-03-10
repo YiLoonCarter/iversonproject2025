@@ -1,3 +1,10 @@
+var tooltipTriggerList = [].slice.call(
+  document.querySelectorAll('[data-bs-toggle="tooltip"]')
+);
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl);
+});
+
 const chkAll = document.getElementById("chkAll");
 chkAll.addEventListener("click", () => {
   let inpElm = document.getElementsByTagName("input");
@@ -10,6 +17,11 @@ chkAll.addEventListener("click", () => {
       }
     }
   }
+});
+
+const backBtn = document.getElementById("btn_Back");
+backBtn.addEventListener("click", () => {
+  document.location.href = "/index.html";
 });
 
 const newBtn = document.getElementById("btn_New");
@@ -102,7 +114,7 @@ fetch(
       let tableDetail2 = document.createElement("td");
       let trxLink = document.createElement("a");
       trxLink.innerText = data.refNo;
-      trxLink.href = "/form.html?trxId=" + data.id;
+      trxLink.href = "/form.html?mode=edt&trxId=" + data.id;
       tableDetail2.appendChild(trxLink);
       tableRow.appendChild(tableDetail2);
 
@@ -173,18 +185,18 @@ fetch(
       liDtl7.appendChild(cpyDtl7);
       divDetail7.appendChild(liDtl7);
 
-      let delDtl7 = document.createElement("a");
-      delDtl7.innerText = "Delete";
-      delDtl7.className = "dropdown-item";
-      delDtl7.href = "/form.html?mode=del&trxId=" + data.id;
-      liDtl7.appendChild(delDtl7);
-      divDetail7.appendChild(liDtl7);
-
       let aprDtl7 = document.createElement("a");
       aprDtl7.innerText = "Approve";
       aprDtl7.className = "dropdown-item";
       aprDtl7.href = "/form.html?mode=apr&trxId=" + data.id;
       liDtl7.appendChild(aprDtl7);
+      divDetail7.appendChild(liDtl7);
+
+      let delDtl7 = document.createElement("a");
+      delDtl7.innerText = "Delete";
+      delDtl7.className = "dropdown-item";
+      delDtl7.href = "/form.html?mode=del&trxId=" + data.id;
+      liDtl7.appendChild(delDtl7);
       divDetail7.appendChild(liDtl7);
 
       divDropdown7.appendChild(anchorDetail7);

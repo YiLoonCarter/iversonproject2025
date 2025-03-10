@@ -11,7 +11,7 @@
     <!-- change colour using utility classes, eg: from bg-body-tertiary to bg-success 
      define either your navbar colour is dark or light, 
      so font colour will adjust accordingly -->
-    <nav class="navbar navbar-expand-lg bg-success navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-bgcolor">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Trade Finance Backoffice</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
       <div class="container py-3 bg-light">
         <!-- <div class="card p-5 bg-light"> -->
         <div class="topMenu mb-3">
-            <h2>Letter of Credit Registation (Edit)</h2>
+            <h2>Letter of Credit Registation</h2>
         </div>
         <div class="mb-3">
             <button class="btn btn-info" id="btn_Detail">Detail</button>
@@ -155,13 +155,67 @@
             </div>
           </div>
         </div>
-        <div class="mt-3">
-          <button class="btn btn-primary" id="btn_Add">Add</button>
-          <button class="btn btn-primary" id="btn_Save">Save</button>
-          <button class="btn btn-primary" id="btn_Back">Back</button>
-      </div>      
+   
       </div>
-      <script src="script.js"></script>
+
+      <!-- <div class="float-sm-start float-md-start float-lg-start mt-3">
+        <button class="btn btn-primary" id="btn_Add">Add</button>
+        <button class="btn btn-primary" id="btn_Save">Save</button>
+        <button class="btn btn-primary" id="btn_Back">Back</button>
+      </div> -->
+
+      <div class="fab-container">
+        <div class="fab shadow">
+          <div class="fab-content">
+            <span class="material-icons" aria-hidden="true">action</span>
+          </div>
+        </div>
+        
+        <div class="sub-button shadow" style="--index: 1;">
+          <a href="#" data-bs-toggle="tooltip" title="Back" id="btn_Back" data-bs-placement="left">
+            <i class="fa-solid fa-arrow-left fa-xl" aria-hidden="true"></i>
+          </a>
+        </div>
+      
+        <div class="sub-button shadow" style="--index: 2;">
+          <a href="#" data-bs-toggle="tooltip" title="Add" id="btn_Add" data-bs-placement="left">
+            <i class="fa-solid fa-square-plus fa-xl" aria-hidden="true"></i>
+          </a>
+        </div>
+      
+        <div class="sub-button shadow" style="--index: 3;">
+          <a href="#" data-bs-toggle="tooltip" title="Save" id="btn_Save" data-bs-placement="left">
+            <i class="fa-solid fa-save fa-xl"  aria-hidden="true"></i>
+          </a>
+        </div>
+      
+        <div class="sub-button shadow" style="--index: 4;">
+          <a href="#" data-bs-toggle="tooltip" title="Copy" id="btn_Copy" data-bs-placement="left">
+            <i class="fa-solid fa-copy fa-xl" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="sub-button shadow" style="--index: 5;">
+          <a href="#" data-bs-toggle="tooltip" title="Approve" id="btn_Apr" data-bs-placement="left">
+            <i class="fa-solid fa-circle-check fa-xl" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="sub-button shadow" style="--index: 6;">
+          <a href="#" data-bs-toggle="tooltip" title="Delete" id="btn_Del" data-bs-placement="left">
+            <i class="fa-solid fa-trash fa-xl" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <button id="show-fab">
+        <i class="fa-solid fa-angles-right fa-md" ></i>
+      </button>
+
+      <button id="hide-fab">
+        <i class="fa-solid fa-angles-left fa-md" ></i>
+      </button>
+
+      <script src="https://kit.fontawesome.com/932c19caf6.js" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script src="script.js"></script>
     </body>
   </html>

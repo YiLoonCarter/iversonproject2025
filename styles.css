@@ -1,3 +1,7 @@
+.navbar-bgcolor {
+    background-color: darkblue;
+}
+
 .topMenu {
     background-color:deepskyblue;
     padding-bottom: 2px;
@@ -32,4 +36,161 @@
 
 .dropdown-item:hover {
     background-color: rgb(66, 177, 202);
+}
+
+.fab-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    user-select: none;
+    position: fixed; /* Fixed instead of absolute */
+    bottom: 30px;
+    right: 30px;
+    /* transition: bottom 0.3s ease-in-out; */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  .fab-container:hover {
+    height: 100%;
+  }
+  /* .fab-container:hover .sub-button:nth-child(2) {
+    transform: translateY(-80px);
+  }
+  .fab-container:hover .sub-button:nth-child(3) {
+    transform: translateY(-140px);
+  }
+  .fab-container:hover .sub-button:nth-child(4) {
+    transform: translateY(-200px);
+  }
+  .fab-container:hover .sub-button:nth-child(5) {
+    transform: translateY(-260px);
+  }
+  .fab-container:hover .sub-button:nth-child(6) {
+    transform: translateY(-320px);
+  } */
+  .fab-container:hover .sub-button {
+    transform: translateY(calc(-70px * var(--index)));
+    transition: transform 0.3s ease;
+    opacity: 1; /* Fully visible on hover */
+  }
+
+  .fab-container .fab {
+    opacity: 0.6; /* Semi-transparent before hover */
+    transition: opacity 0.3s ease-in-out;
+    position: relative;
+    height: 70px;
+    width: 70px;
+    background-color: #4ba2ff;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .fab-container .fab:hover {
+    opacity: 1; /* Fully visible on hover */
+  }
+  .fab-container .fab::before {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 35px;
+    width: 35px;
+    background-color: inherit;
+    border-radius: 0 0 10px 0;
+    z-index: -1;
+  }
+  .fab-container .fab .fab-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+  .fab-container .fab .fab-content .material-icons {
+    color: black;
+    font-size: 12px;
+  }
+  .fab-container .fab .fab-content .material-icons:hover {
+    color: white;
+    font-size: 13px;
+  }
+  .fab-container .sub-button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 10px;
+    right: 10px;
+    height: 50px;
+    width: 50px;
+    /* background-color: #4ba2ff; */
+    background-color: paleturquoise;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    opacity: 0; /* Semi-transparent before hover */
+    transition: opacity 0.3s ease-in-out;
+  }
+  .fab-container .sub-button:hover {
+    cursor: pointer;
+    background-color: aquamarine;
+    
+  }
+  .fab-container .sub-button .material-icons {
+    color: black;
+    padding-top: 6px;
+  }
+
+  .fab-hidden {
+    transform: translateX(100px); /* Moves it out of view */
+    opacity: 0;
+    pointer-events: none; /* Prevents interaction */
+}
+
+/* Hide Button (Left Arrow) */
+#hide-fab {
+    position: fixed;
+    bottom: 35px;
+    right: 0px;
+    /* background-color: #ff4b4b; */
+    background-color: #4ba2ff;
+    border: none;
+    /* border-radius: 50%; */
+    height: 50px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+#hide-fab:hover {
+    color: white;
+}
+
+/* Show Button (Right Arrow) */
+#show-fab {
+    position: fixed;
+    bottom: 35px;
+    right: 0px;
+    /* background-color: #4ba2ff; */
+    background-color: #4ba2ff;
+    border: none;
+    /* border-radius: 50%; */
+    height: 50px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+#show-fab:hover {
+    color: white;
+}
+
+#show-fab.visible {
+    opacity: 1;
+    pointer-events: all;
 }
